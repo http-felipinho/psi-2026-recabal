@@ -1,0 +1,15 @@
+# compose.yaml
+services:
+  demo:
+    build:
+      context: .
+      target: runtime
+    image: psi-lab:runtime
+    volumes:
+      - ./out:/out
+
+  tests:
+    build:
+      context: .
+      target: dev
+    image: psi-lab:dev
